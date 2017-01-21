@@ -12,13 +12,24 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-$(call inherit-product, device/htc/m7/full_m7.mk)
+# Inherit from those products. Most specific first.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit CM full phone configuration
-$(call inherit-product, vendor/cm/config/common_full_phone.mk)
+# Get non-open-source specific aspects
+$(call inherit-product-if-exists, vendor/htc/m7/m7-vendor.mk)
 
-# Device naming
-PRODUCT_NAME := cm_m7
+# Inherit from m7-common
+$(call inherit-product, device/htc/m7-common/m7-common.mk)
+
+# Overlays
+DEVICE_PACKAGE_OVERLAYS += device/htc/m7/overlay
+
+# Set those variables here to overwrite the inherited values.
+PRODUCT_BRAND := htc
+PRODUCT_DEVICE := m7
+PRODUCT_MANUFACTURER := HTC
+PRODUCT_MODEL := One
+PRODUCT_NAME := nameless_m7
 
 # Override build props
 PRODUCT_BUILD_PROP_OVERRIDES += \

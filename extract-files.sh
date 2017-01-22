@@ -16,7 +16,7 @@
 
 set -e
 
-export DEVICE=m7
+export DEVICE=m7ul
 export DEVICE_COMMON=m7-common
 export VENDOR=htc
 

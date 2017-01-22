@@ -24,9 +24,11 @@ $(call inherit-product, device/htc/m7-common/m7-common.mk)
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += device/htc/m7/overlay
 
+I_WANT_A_QUAIL_STAR := true
+
 # Set those variables here to overwrite the inherited values.
 PRODUCT_BRAND := htc
-PRODUCT_DEVICE := m7
+PRODUCT_DEVICE := m7ul
 PRODUCT_MANUFACTURER := HTC
 PRODUCT_MODEL := One
 PRODUCT_NAME := nameless_m7ul
